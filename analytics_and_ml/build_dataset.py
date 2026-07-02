@@ -99,6 +99,15 @@ def extract_and_sync_xdf(xdf_file_path):
     first_timestamp = df_clean['timestamp'].iloc[0]
     df_clean['Relative_Time_Sec'] = df_clean['timestamp'] - first_timestamp
 
+    df_clean['FSM_State'] = df_clean['FSM_State'].astype(int)
+    # For each camera frame, true time in state =
+    # frame's actual timestamp - timestamp of the first frame in that state for that subject
+
+    df_clean['true_time_in_state'] = (
+        df_clean.groupby(['Session_ID', 'FSM_State'])['timestamp']
+        .transform(lambda x: x - x.iloc[0])
+    )
+
     print(f"[{session_id}] Success. Synced {len(df_clean)} frames.")
     return df_clean
 
