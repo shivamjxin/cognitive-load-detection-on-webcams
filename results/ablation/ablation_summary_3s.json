@@ -2,11 +2,21 @@
   "best_scale": "3s",
   "best_regime": "A",
   "spatial_features": [
-    "A_mpd",
-    "A_sge_raw",
-    "A_sge_mm",
-    "delta_A_mpd",
-    "delta_A_sge_mm"
+    "mpd_mean",
+    "sge_raw_mean",
+    "sge_mm_mean",
+    "delta_mpd_mean",
+    "delta_sge_mm_mean",
+    "mpd_std",
+    "sge_mm_std",
+    "mpd_cv",
+    "sge_mm_cv",
+    "mpd_slope",
+    "sge_mm_slope",
+    "mpd_range",
+    "sge_mm_range",
+    "mpd_autocorr",
+    "sge_mm_autocorr"
   ],
   "temporal_features": [
     "vel_p50_mean",
@@ -35,21 +45,21 @@
   "n_segments": 54,
   "n_subjects": 18,
   "primary_comparison": {
-    "spatial_auc": 0.5556,
+    "spatial_auc": 0.6389,
     "temporal_auc": 0.7222,
-    "full_auc": 0.6667,
-    "W_spatial_vs_temporal": 22.0,
-    "p_spatial_vs_temporal": 0.15333049284635678,
+    "full_auc": 0.6389,
+    "W_spatial_vs_temporal": 30.0,
+    "p_spatial_vs_temporal": 0.4385780260809998,
     "winner": "temporal"
   },
   "bootstrap": {
     "Full_Model": {
-      "boot_mean": 0.8543,
+      "boot_mean": 0.8435,
       "boot_lo": 0.6944,
       "boot_hi": 0.9722
     },
     "Spatial_Only": {
-      "boot_mean": 0.8294,
+      "boot_mean": 0.8307,
       "boot_lo": 0.6667,
       "boot_hi": 0.9722
     },
@@ -61,127 +71,127 @@
   },
   "all_conditions": {
     "Full_Model": {
-      "mean_auc": 0.6667,
-      "std_auc": 0.3333,
-      "brier": 0.2514,
+      "mean_auc": 0.6389,
+      "std_auc": 0.3654,
+      "brier": 0.2382,
       "p_vs_full": NaN
     },
     "Spatial_Only": {
-      "mean_auc": 0.5556,
-      "std_auc": 0.4045,
-      "brier": 0.2746,
-      "p_vs_full": 0.3341
+      "mean_auc": 0.6389,
+      "std_auc": 0.4016,
+      "brier": 0.2548,
+      "p_vs_full": 1.0
     },
     "Temporal_Only": {
       "mean_auc": 0.7222,
       "std_auc": 0.2992,
       "brier": 0.2504,
-      "p_vs_full": 0.1573
+      "p_vs_full": 0.0833
     },
     "No_Spatial": {
       "mean_auc": 0.7222,
       "std_auc": 0.2992,
       "brier": 0.2504,
-      "p_vs_full": 0.1573
+      "p_vs_full": 0.0833
     },
     "No_Temporal": {
-      "mean_auc": 0.5556,
-      "std_auc": 0.4045,
-      "brier": 0.2746,
-      "p_vs_full": 0.3341
+      "mean_auc": 0.6389,
+      "std_auc": 0.4016,
+      "brier": 0.2548,
+      "p_vs_full": 1.0
     },
     "No_Velocity": {
-      "mean_auc": 0.5833,
-      "std_auc": 0.4167,
-      "brier": 0.2815,
-      "p_vs_full": 0.4054
+      "mean_auc": 0.6111,
+      "std_auc": 0.4267,
+      "brier": 0.288,
+      "p_vs_full": 0.7389
     },
     "No_EAR_Blink": {
       "mean_auc": 0.5833,
-      "std_auc": 0.4167,
-      "brier": 0.264,
-      "p_vs_full": 0.3657
+      "std_auc": 0.3819,
+      "brier": 0.2666,
+      "p_vs_full": 0.6078
     },
     "No_Pose": {
-      "mean_auc": 0.6389,
-      "std_auc": 0.4016,
-      "brier": 0.2338,
-      "p_vs_full": 0.763
+      "mean_auc": 0.5833,
+      "std_auc": 0.4167,
+      "brier": 0.2313,
+      "p_vs_full": 0.4795
     },
     "No_Delta": {
       "mean_auc": 0.6944,
-      "std_auc": 0.3391,
-      "brier": 0.2351,
-      "p_vs_full": 0.7055
+      "std_auc": 0.3778,
+      "brier": 0.2461,
+      "p_vs_full": 0.1573
     },
     "MPD_SGE_Only": {
-      "mean_auc": 0.5556,
-      "std_auc": 0.4045,
-      "brier": 0.2746,
-      "p_vs_full": 0.3341
+      "mean_auc": 0.6389,
+      "std_auc": 0.4016,
+      "brier": 0.2548,
+      "p_vs_full": 1.0
     },
     "Velocity_Only": {
       "mean_auc": 0.5833,
       "std_auc": 0.4488,
       "brier": 0.2636,
-      "p_vs_full": 0.3657
+      "p_vs_full": 0.5887
     },
     "EAR_Blink_Only": {
       "mean_auc": 0.6111,
       "std_auc": 0.4267,
       "brier": 0.2758,
-      "p_vs_full": 0.5637
+      "p_vs_full": 0.7389
     },
     "Pose_Dynamics_Only": {
       "mean_auc": 0.4722,
       "std_auc": 0.3525,
       "brier": 0.3024,
-      "p_vs_full": 0.0833
+      "p_vs_full": 0.1944
     }
   },
   "noise_robustness": {
     "Full_Model": [
       [
         0.0,
-        0.6111
+        0.6389
       ],
       [
         0.1,
-        0.5
+        0.6111
       ],
       [
         0.2,
-        0.3889
+        0.5278
       ],
       [
         0.3,
-        0.5833
+        0.5556
       ],
       [
         0.5,
-        0.5278
+        0.5833
       ]
     ],
     "Spatial_Only": [
       [
         0.0,
-        0.5556
+        0.6389
       ],
       [
         0.1,
-        0.5139
+        0.5833
       ],
       [
         0.2,
-        0.4444
+        0.5278
       ],
       [
         0.3,
-        0.6111
+        0.6667
       ],
       [
         0.5,
-        0.5278
+        0.5833
       ]
     ],
     "Temporal_Only": [
