@@ -1,0 +1,30 @@
+{
+  "best_scale": "3s",
+  "best_regime": "A",
+  "best_boot_auc": 0.6373232060185184,
+  "best_boot_ci": [
+    0.5580343364197531,
+    0.7179880401234566
+  ],
+  "best_wilcoxon_p": 0.00279998779296875,
+  "best_perm_p": 0.008,
+  "best_features": [
+    "A_mpd",
+    "A_sge_raw",
+    "A_sge_mm",
+    "A_vel_p10",
+    "A_vel_p50",
+    "A_vel_p90",
+    "ear_median",
+    "ear_iqr",
+    "ear_p10",
+    "ear_p90",
+    "blink_count",
+    "pose_lambda1",
+    "pose_lambda2",
+    "pose_lambda3",
+    "delta_A_mpd",
+    "delta_A_sge_mm"
+  ],
+  "selection_rationale": "Scale '3s' passes BOTH Wilcoxon AND permutation p<0.05 with highest bootstrap AUC among qualifying scales."
+}

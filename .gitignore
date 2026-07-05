@@ -5,4 +5,6 @@ __pycache__/
 local_config.json
 data_logs/*.xdf
 data_logs/*.csv
-data_logs/processed
+data_logs/processed/*.parquet
+data_logs/processed/*.csv
+analytics_and_ml/.ipynb_checkpoints

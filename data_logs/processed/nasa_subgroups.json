@@ -1,0 +1,28 @@
+{
+  "nasa_consistent": [
+    "p1",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+  ],
+  "nasa_inconsistent": [
+    "p8"
+  ],
+  "criterion": "Task2_TLX > Task1_TLX (composite score)",
+  "n_consistent": 17,
+  "n_inconsistent": 1,
+  "n_total": 18
+}

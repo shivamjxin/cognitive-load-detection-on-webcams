@@ -1,0 +1,210 @@
+{
+  "best_scale": "3s",
+  "best_regime": "A",
+  "spatial_features": [
+    "A_mpd",
+    "A_sge_raw",
+    "A_sge_mm",
+    "delta_A_mpd",
+    "delta_A_sge_mm"
+  ],
+  "temporal_features": [
+    "vel_p50_mean",
+    "vel_p50_std",
+    "vel_p50_slope",
+    "vel_p50_autocorr",
+    "vel_range_mean",
+    "vel_range_slope",
+    "vel_cv",
+    "ear_mean",
+    "ear_std",
+    "ear_slope",
+    "ear_autocorr",
+    "ear_range",
+    "blink_total",
+    "blink_mean",
+    "blink_std",
+    "blink_slope",
+    "pose_l1_mean",
+    "pose_l1_std",
+    "pose_l1_slope",
+    "pose_l1_autocorr",
+    "pose_total_mean",
+    "pose_total_slope"
+  ],
+  "n_segments": 54,
+  "n_subjects": 18,
+  "primary_comparison": {
+    "spatial_auc": 0.5556,
+    "temporal_auc": 0.7222,
+    "full_auc": 0.6667,
+    "W_spatial_vs_temporal": 22.0,
+    "p_spatial_vs_temporal": 0.15333049284635678,
+    "winner": "temporal"
+  },
+  "bootstrap": {
+    "Full_Model": {
+      "boot_mean": 0.8543,
+      "boot_lo": 0.6944,
+      "boot_hi": 0.9722
+    },
+    "Spatial_Only": {
+      "boot_mean": 0.8294,
+      "boot_lo": 0.6667,
+      "boot_hi": 0.9722
+    },
+    "Temporal_Only": {
+      "boot_mean": 0.8626,
+      "boot_lo": 0.7222,
+      "boot_hi": 0.9722
+    }
+  },
+  "all_conditions": {
+    "Full_Model": {
+      "mean_auc": 0.6667,
+      "std_auc": 0.3333,
+      "brier": 0.2514,
+      "p_vs_full": NaN
+    },
+    "Spatial_Only": {
+      "mean_auc": 0.5556,
+      "std_auc": 0.4045,
+      "brier": 0.2746,
+      "p_vs_full": 0.3341
+    },
+    "Temporal_Only": {
+      "mean_auc": 0.7222,
+      "std_auc": 0.2992,
+      "brier": 0.2504,
+      "p_vs_full": 0.1573
+    },
+    "No_Spatial": {
+      "mean_auc": 0.7222,
+      "std_auc": 0.2992,
+      "brier": 0.2504,
+      "p_vs_full": 0.1573
+    },
+    "No_Temporal": {
+      "mean_auc": 0.5556,
+      "std_auc": 0.4045,
+      "brier": 0.2746,
+      "p_vs_full": 0.3341
+    },
+    "No_Velocity": {
+      "mean_auc": 0.5833,
+      "std_auc": 0.4167,
+      "brier": 0.2815,
+      "p_vs_full": 0.4054
+    },
+    "No_EAR_Blink": {
+      "mean_auc": 0.5833,
+      "std_auc": 0.4167,
+      "brier": 0.264,
+      "p_vs_full": 0.3657
+    },
+    "No_Pose": {
+      "mean_auc": 0.6389,
+      "std_auc": 0.4016,
+      "brier": 0.2338,
+      "p_vs_full": 0.763
+    },
+    "No_Delta": {
+      "mean_auc": 0.6944,
+      "std_auc": 0.3391,
+      "brier": 0.2351,
+      "p_vs_full": 0.7055
+    },
+    "MPD_SGE_Only": {
+      "mean_auc": 0.5556,
+      "std_auc": 0.4045,
+      "brier": 0.2746,
+      "p_vs_full": 0.3341
+    },
+    "Velocity_Only": {
+      "mean_auc": 0.5833,
+      "std_auc": 0.4488,
+      "brier": 0.2636,
+      "p_vs_full": 0.3657
+    },
+    "EAR_Blink_Only": {
+      "mean_auc": 0.6111,
+      "std_auc": 0.4267,
+      "brier": 0.2758,
+      "p_vs_full": 0.5637
+    },
+    "Pose_Dynamics_Only": {
+      "mean_auc": 0.4722,
+      "std_auc": 0.3525,
+      "brier": 0.3024,
+      "p_vs_full": 0.0833
+    }
+  },
+  "noise_robustness": {
+    "Full_Model": [
+      [
+        0.0,
+        0.6111
+      ],
+      [
+        0.1,
+        0.5
+      ],
+      [
+        0.2,
+        0.3889
+      ],
+      [
+        0.3,
+        0.5833
+      ],
+      [
+        0.5,
+        0.5278
+      ]
+    ],
+    "Spatial_Only": [
+      [
+        0.0,
+        0.5556
+      ],
+      [
+        0.1,
+        0.5139
+      ],
+      [
+        0.2,
+        0.4444
+      ],
+      [
+        0.3,
+        0.6111
+      ],
+      [
+        0.5,
+        0.5278
+      ]
+    ],
+    "Temporal_Only": [
+      [
+        0.0,
+        0.6944
+      ],
+      [
+        0.1,
+        0.5556
+      ],
+      [
+        0.2,
+        0.6111
+      ],
+      [
+        0.3,
+        0.5833
+      ],
+      [
+        0.5,
+        0.5556
+      ]
+    ]
+  }
+}

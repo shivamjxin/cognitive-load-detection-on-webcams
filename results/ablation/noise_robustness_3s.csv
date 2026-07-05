@@ -1,0 +1,16 @@
+model,sigma,auc
+Full_Model,0.0,0.6111
+Full_Model,0.1,0.5
+Full_Model,0.2,0.3889
+Full_Model,0.3,0.5833
+Full_Model,0.5,0.5278
+Spatial_Only,0.0,0.5556
+Spatial_Only,0.1,0.5139
+Spatial_Only,0.2,0.4444
+Spatial_Only,0.3,0.6111
+Spatial_Only,0.5,0.5278
+Temporal_Only,0.0,0.6944
+Temporal_Only,0.1,0.5556
+Temporal_Only,0.2,0.6111
+Temporal_Only,0.3,0.5833
+Temporal_Only,0.5,0.5556

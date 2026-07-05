@@ -1,0 +1,79 @@
+{
+  "scale": "2s",
+  "winner": "A",
+  "winner_note": "Regime A passes BOTH Wilcoxon AND permutation p<0.05. Selected by highest bootstrap AUC.",
+  "regime_A": {
+    "fold_auc": 0.6349206349206349,
+    "boot_auc": 0.5722923831569665,
+    "boot_ci": [
+      0.5201692019400352,
+      0.6307319223985891
+    ],
+    "std_auc": 0.16605139645164824,
+    "brier": 0.22887602476241314,
+    "wilcoxon_p": 0.006015777587890625,
+    "rank_biserial_r": 0.6608187134502923,
+    "perm_p": 0.019,
+    "n_features": 16,
+    "features": [
+      "A_mpd",
+      "A_sge_raw",
+      "A_sge_mm",
+      "A_vel_p10",
+      "A_vel_p50",
+      "A_vel_p90",
+      "ear_median",
+      "ear_iqr",
+      "ear_p10",
+      "ear_p90",
+      "blink_count",
+      "pose_lambda1",
+      "pose_lambda2",
+      "pose_lambda3",
+      "delta_A_mpd",
+      "delta_A_sge_mm"
+    ]
+  },
+  "regime_B": {
+    "fold_auc": 0.5357142857142857,
+    "boot_auc": 0.49036904761904765,
+    "boot_ci": [
+      0.40321869488536155,
+      0.5776041666666667
+    ],
+    "std_auc": 0.23720070053775327,
+    "brier": 0.23358584815039465,
+    "wilcoxon_p": 0.6331367492675781,
+    "rank_biserial_r": -0.08771929824561409,
+    "perm_p": 0.564,
+    "n_features": 16,
+    "features": [
+      "B_mpd",
+      "B_sge_raw",
+      "B_sge_mm",
+      "B_vel_p10",
+      "B_vel_p50",
+      "B_vel_p90",
+      "ear_median",
+      "ear_iqr",
+      "ear_p10",
+      "ear_p90",
+      "blink_count",
+      "pose_lambda1",
+      "pose_lambda2",
+      "pose_lambda3",
+      "delta_B_mpd",
+      "delta_B_sge_mm"
+    ]
+  },
+  "controls": {
+    "positive_time": 1.0,
+    "negative_drift": 0.5535714285714286,
+    "negative_block_q": 0.5118496472663139
+  },
+  "robustness": {
+    "low": 0.6309523809523809,
+    "medium": 0.5952380952380952,
+    "high": 0.5753968253968255
+  }
+}
