@@ -3,6 +3,12 @@
 An autonomous, dual-process biometric data collection architecture designed to capture, synchronize, and analyze physiological indicators of cognitive stress using standard commercial webcams.
  
 ---
+
+[![Watch the video](https://www.youtube.com/watch?v=GAeO6a50b3A)](https://youtu.be/GAeO6a50b3A)
+
+
+
+
  
 ## The Vision: What We Are Trying to Prove
  
@@ -167,9 +173,35 @@ Once the spacebar is pressed, the automated UI takes over. The subject must foll
   - *Purpose:* Displays the final score. Captures the crucial 3-second physical "exhale" as cognitive load drops to zero, before safely terminating the Camera, UI, and LabRecorder processes.
 ---
  
-## Next Steps: The Data Science Pipeline
- 
-Upon successful completion of an experiment, a unified `.xdf` file is generated in the `data_logs/` directory.
- 
-The next phase of this project (currently in development) involves building an extraction engine using `pyxdf` to crack open this file, merge the 30Hz physical telemetry with the 60Hz psychological event markers, and format them into a unified Pandas DataFrame for model training.
+##  Feature Extraction & Offline Machine Learning Pipeline
+
+The synchronized `.xdf` recordings are processed offline through a non-overlapping multi-scale windowing architecture (evaluated across 2s, 3s, and 4s scales) and classified using a **LightGBM** gradient-boosted decision tree ensemble via nested **Leave-One-Subject-Out Cross-Validation (LOSO-CV)**.
+
+### Feature Engineering Taxonomy
+To isolate spatial geometries from temporal kinematics, features are extracted into distinct categories:
+
+- **Stateless Spatial Gaze (Translation-Invariant):**
+  - **Mean Pairwise Distance (MPD):** Measures spatial gaze dispersion across all pairs of points.
+  - **Stationary Gaze Entropy (SGE):** Assesses the spatial unpredictability of gaze distributions on a normalized 2D grid, applying the **Miller–Madow bias correction**.
+  - **Spatial Deltas:** Frame-to-frame shifts in MPD and bias-corrected SGE.
+- **Temporal Oculomotor Dynamics:**
+  - **Gaze Velocity Metrics:** 10th, 50th, and 90th velocity percentiles along with velocity dynamic ranges.
+  - **Sequence Dynamics:** Sequence-level Mean, Standard Deviation, Coefficient of Variation (CV), OLS Slope, and Lag-1 Autocorrelation.
+- **Anatomical Eye Behavior:**
+  - **Eye Aspect Ratio (EAR):** Median, IQR, 10th/90th percentiles, and dynamic openness trends.
+  - **Blink Kinetics:** Segment blink frequency and rate trends.
+- **Head Kinematics:**
+  - **Pose Covariance Eigenspectrum:** Principal eigenvalues ($\lambda_1, \lambda_2, \lambda_3$) of the 3D head pose trajectory (Pitch, Yaw, Roll).
+  - **Total Pose Variance:** Overall head stability metric ($\sum \lambda_i$).
+
+---
+
+##  Key Empirical Findings & Model Evaluation
+
+- **Temporal Resolution:** The **3-second analysis window** achieved the optimal balance of temporal resolution and classification stability, reaching an **ROC-AUC of 0.722** (Bootstrap 95% CI: 0.558–0.718, Brier Score: 0.2149, Wilcoxon $p = 0.0028$).
+- **Spatial vs. Temporal Robustness:** While temporal dynamics provided the highest predictive power under clean conditions, stateless spatial representations exhibited substantially greater noise-resilience under simulated tracking dropout and jitter perturbations.
+- **Task Validation:** Experimental workload manipulation was confirmed via NASA-TLX across all 6 subscales ($p < 0.001$), with 17 of 18 subjects reporting significantly elevated mental demand and effort during the dual-task condition.
+- **Model Interpretability:** Global SHAP (SHapley Additive exPlanations) attribution revealed that classification relied heavily on multi-modal synergy (gaze dispersion + EAR percentiles + head pose covariance) rather than a single dominant metric.
+
+---
  
